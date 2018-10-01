@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
-const PlaylistSchema = new Schema({
+const WinnerSchema = new Schema({
   profile: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'profiles',
@@ -12,8 +12,9 @@ const PlaylistSchema = new Schema({
     ref: 'areas',
     required: true
   },
-  name: {
-    type: String,
+  playlist: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'plsylists',
     required: true
   },
   created_at: {
@@ -24,11 +25,9 @@ const PlaylistSchema = new Schema({
     type: Date
   },
   expires_at: {
-    //I think this should be reference from the winner data. Maybe not even releveat here at all?
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'winners',
+    type: Date,
     required: true
   }
 })
 
-module.exports = mongoose.model('playlists', PlaylistSchema);
+module.exports = mongoose.model('winners', WinnerSchema);

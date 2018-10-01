@@ -31,4 +31,17 @@ const AreaSchema = new Schema({
   }  
 });
 
-module.exports = mongoose.model('cities', AreaSchema);
+  //I think this is needed to work the bounds in area schema
+const polygonSchema = new Schema({
+  type: {
+    type: String,
+    enum: ['Polygon'],
+    required: true
+  },
+  coordinates: {
+    type: [[[Number]]], // Array of arrays of arrays of numbers
+    required: true
+  }
+});
+
+module.exports = mongoose.model('areas', AreaSchema);
