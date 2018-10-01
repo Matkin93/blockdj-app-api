@@ -31,7 +31,7 @@ const AreaSchema = new Schema({
   }  
 });
 
-  //I think this is needed to work the bounds in area schema
+  //I think this is needed to work the bounds proprety, in area schema
 const polygonSchema = new Schema({
   type: {
     type: String,
