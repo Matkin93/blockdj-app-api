@@ -1,5 +1,5 @@
-const mongoose = require('mongoose')
-const { Schema } = mongoose
+const mongoose = require('mongoose');
+const { Schema } = mongoose;
 
 const CommentSchema = new Schema({
   profile: {
@@ -18,6 +18,6 @@ const CommentSchema = new Schema({
   updated_at: {
     type: Date
   }
-})
+});
 
 module.exports = mongoose.model('comments', CommentSchema);
