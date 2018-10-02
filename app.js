@@ -5,3 +5,5 @@ const apiRouter = require('./routes/api.js')
 const cors = require('cors')
 
 app.use('/api', apiRouter)
+
+module.exports = app
