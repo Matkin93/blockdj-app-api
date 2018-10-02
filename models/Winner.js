@@ -14,7 +14,7 @@ const WinnerSchema = new Schema({
   },
   playlist: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'plsylists',
+    ref: 'playlists',
     required: true
   },
   created_at: {

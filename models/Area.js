@@ -1,6 +1,19 @@
 const mongoose = require('mongoose')
 const { Schema } = mongoose
 
+  //I think this is needed to work the bounds proprety, in area schema
+  const polygonSchema = new Schema({
+    type: {
+      type: String,
+      enum: ['Polygon'],
+      required: true
+    },
+    coordinates: {
+      type: [[[Number]]], // Array of arrays of arrays of numbers
+      required: true
+    }
+  });
+  
 const AreaSchema = new Schema({
   city: {
     type: mongoose.Schema.Types.ObjectId,
@@ -31,17 +44,5 @@ const AreaSchema = new Schema({
   }  
 });
 
-  //I think this is needed to work the bounds proprety, in area schema
-const polygonSchema = new Schema({
-  type: {
-    type: String,
-    enum: ['Polygon'],
-    required: true
-  },
-  coordinates: {
-    type: [[[Number]]], // Array of arrays of arrays of numbers
-    required: true
-  }
-});
 
 module.exports = mongoose.model('areas', AreaSchema);

@@ -5,8 +5,14 @@ To use the database create a config.js file inside a config directory.
 
 ```javascript
 
-  const DB_URL = 'mongodb://localhost:27017/blockdj_app'
+const spotifyCredentials = {
+  client_id: /* Check slack channel */
+  client_secret: /* Check slack channel */
+  redirect_uri = null
+}
 
-module.exports = DB_URL
+const DB_URL = 'mongodb://localhost:27017/blockdj_app'
+
+module.exports = {DB_URL, spotifyCredentials}
 
 ```

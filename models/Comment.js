@@ -9,7 +9,7 @@ const CommentSchema = new Schema({
   },
   body: {
     type: String,
-    required = true
+    required: true
   },
   created_at: {
     type: Date,
