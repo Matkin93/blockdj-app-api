@@ -6,6 +6,9 @@ const cors = require('cors')
 const mongoose = require('mongoose')
 const { DB_URL } = require('./config/config.js')
 
+app.use(cors())
+app.use(bodyparser)
+
 app.use('/api', apiRouter)
 
 mongoose.connect(DB_URL, {useNewUrlParser: true})

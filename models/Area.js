@@ -15,13 +15,13 @@ const { Schema } = mongoose
   });
   
 const AreaSchema = new Schema({
+  name: {
+    type: String,
+    required: true
+  },
   city: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'cities',
-    required: true
-  },
-  name: {
-    type: String,
     required: true
   },
   details: {
@@ -31,6 +31,7 @@ const AreaSchema = new Schema({
     type: String,
   },
   bounds: {
+    
     //Not sure if this is correct, need to go over this with someone. 
     type: polygonSchema,
     required: true
