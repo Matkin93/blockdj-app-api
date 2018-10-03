@@ -1,27 +1,8 @@
-const faker = require('faker')
 const {DB_URL} = require('./config/config.js')
 const mongoose = require('mongoose')
-const { Profile, Area } = require('./models/index.js')
+const { Profile, Area, City, Comment, Playlist, Track, Vote, Winner } = require('./models/index.js')
+const mock = require('./mock.js')
 
-const createProfile = () => ({
-  username: faker.internet.userName(),
-  name: faker.name.findName(),
-  email: faker.internet.email(),
-  bio: faker.lorem.paragraph(),
-  avatar_url: faker.image.imageUrl()
-})
-
-const createArea = () => ({
-  name: faker.address.streetName(),
-  // Not sure we need desription for areas
-  // description: faker.lorem.sentence(),
-  bounds: [
-    {
-      latitude: faker.address.latitude(),
-      longitude: faker.address.longitude()
-    }
-  ]
-})
 
 mongoose.connect(DB_URL, {useNewUrlParser: true})
 .then(() => {
@@ -30,14 +11,41 @@ mongoose.connect(DB_URL, {useNewUrlParser: true})
   return mongoose.connection.dropDatabase();
 })
 .then(() => {
-  const profiles = Array.from({length: 20}, createProfile)
-  
-  return Profile.insertMany(profiles)
+  const profiles = Array.from({length: 20}, mock.createProfile)
+  const cities = Array.from({length: 10}, mock.createCity)
+  return Promise.all(
+    [
+      Profile.insertMany(profiles),
+      City.insertMany(cities)
+    ]
+  ) 
 })
 .then(() => {
-  const areas = Array.from({length: 10}, createArea)
-  console.log(areas)
-  return Area.insertMany(areas)
+  const areas = Array.from({length: 10}, mock.createArea)
+  const comments = Array.from({length: 30}, mock.createCommment)
+  return Promise.all(
+    [
+      Area.insertMany(areas),
+      Comment.insertMany(comments)
+    ]
+  )
+})
+.then(() => {
+  const playlists = Array.from({length: 10}, mock.createPlaylist)
+  return Playlist.insertMany(playlists)
+})
+.then(() => {
+  const tracks = Array.from({length: 20}, mock.createTrack)
+  const votes = Array.from({length: 50}, mock.createVote)
+  const winners = Array.from({length: 5}, mock.createWinner)
+  return Promise(
+    [
+      Track.insertMany(tracks),
+      Vote.insertMany(votes),
+      Winnner.insertMany(winners)
+
+    ]
+  )
 })
 .then(() => {
   mongoose.disconnect()

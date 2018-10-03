@@ -22,12 +22,6 @@ const PlaylistSchema = new Schema({
   },
   updated_at: {
     type: Date
-  },
-  expires_at: {
-    //I think this should be reference from the winner data. Maybe not even releveat here at all?
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'winners',
-    required: true
   }
 })
 

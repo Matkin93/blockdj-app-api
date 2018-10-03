@@ -11,12 +11,15 @@ const AreaSchema = new Schema({
     ref: 'cities',
     // required: true
   },
+  colour: {
+    type: String
+  },
   image_url: {
     type: String,
   },
   bounds: {
     type: [
-      {latitude: Number, Longitude: Number}
+      {latitude: Number, longitude: Number}
     ],
     required: true
 
