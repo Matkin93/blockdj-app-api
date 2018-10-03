@@ -1,19 +1,6 @@
 const mongoose = require('mongoose')
 const { Schema } = mongoose
 
-  //I think this is needed to work the bounds proprety, in area schema
-  const polygonSchema = new Schema({
-    type: {
-      type: String,
-      enum: ['Polygon'],
-      required: true
-    },
-    coordinates: {
-      type: [[[Number]]], // Array of arrays of arrays of numbers
-      required: true
-    }
-  });
-  
 const AreaSchema = new Schema({
   name: {
     type: String,
@@ -22,19 +9,17 @@ const AreaSchema = new Schema({
   city: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'cities',
-    required: true
-  },
-  details: {
-    type: String,
+    // required: true
   },
   image_url: {
     type: String,
   },
   bounds: {
-    
-    //Not sure if this is correct, need to go over this with someone. 
-    type: polygonSchema,
+    type: [
+      {latitude: Number, Longitude: Number}
+    ],
     required: true
+
   },
   created_at: {
     type: Date,
