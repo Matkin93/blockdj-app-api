@@ -9,7 +9,7 @@ const AreaSchema = new Schema({
   city: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'cities',
-    // required: true
+    required: true
   },
   colour: {
     type: String

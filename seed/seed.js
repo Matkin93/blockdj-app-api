@@ -1,7 +1,7 @@
-const {DB_URL} = require('./config/config.js')
+const {DB_URL} = require('../config/config.js')
 const mongoose = require('mongoose')
-const { Profile, Area, City, Comment, Playlist, Track, Vote, Winner } = require('./models/index.js')
-const mock = require('./mock.js')
+const { Profile, Area, City, Comment, Playlist, Track, Vote, Winner } = require('../models/index.js')
+const mock = require('../mock.js')
 
 
 mongoose.connect(DB_URL, {useNewUrlParser: true})

@@ -1,0 +1,32 @@
+[
+  {
+    "name":"Northcoders Block",
+    "city":"Manchester",
+    "colour":"Blue"
+  },
+  {
+    "name":"Piccadilly",
+    "city":"Manchester",
+    "colour":"Black"
+  },
+  {
+    "name":"Arndale",
+    "city":"Manchester",
+    "colour":"Red"
+  },
+  {
+    "name":"Wilson Square",
+    "city":"Huddersfield",
+    "colour":"Yellow"
+  },
+  {
+    "name":"Berry Brow",
+    "city":"Huddersfield",
+    "colour":"Pink"
+  },
+  {
+    "name":"Kingsgate",
+    "city":"Huddersfield",
+    "colour":"Purple"
+  }
+]

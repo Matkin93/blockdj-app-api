@@ -26,7 +26,7 @@ const WinnerSchema = new Schema({
   },
   expires_at: {
     type: Date,
-    required: true
+    // required: true
   }
 })
 

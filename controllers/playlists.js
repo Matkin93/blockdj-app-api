@@ -7,6 +7,7 @@ exports.newPlaylist = (req, res, next) => {
   .then((playlist) => {
     res.status(201).res.send({playlist})
   })
+  .catch(next)
 }
 
 exports.getPlaylistById = (req, res, next) => {
@@ -15,6 +16,7 @@ exports.getPlaylistById = (req, res, next) => {
   .then((playlist) => {
     res.status(200).res.send({playlist});
   })
+  .catch(next)
 }
 
 exports.getTracksForPlaylist = (req, res, next) => {
@@ -23,6 +25,7 @@ exports.getTracksForPlaylist = (req, res, next) => {
   .then((tracks) => {
     res.status(200).res.send({tracks})
   })
+  .catch(next)
 
   
 }

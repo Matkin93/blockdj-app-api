@@ -1,0 +1,20 @@
+[
+  {
+    "username": "rkerwen0",
+    "name": "Rand Kerwen",
+    "email": "rkerwen0@tamu.edu",
+    "bio": "Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor."
+  },
+  {
+    "username": "ksouthouse1",
+    "name": "Kathleen Southouse",
+    "email": "ksouthouse1@github.com",
+    "bio": "Pellentesque at nulla. Suspendisse potenti."
+  },
+  {
+    "username": "rcorssen2",
+    "name": "Ruy Corssen",
+    "email": "rcorssen2@dyndns.org",
+    "bio": "Vivamus tortor. Duis mattis egestas metus. Aenean fermentum."
+  }
+]
