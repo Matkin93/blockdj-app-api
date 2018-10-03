@@ -1,23 +1,46 @@
-const newPlaylist = (req, res, next) => {
-  console.log('MAKING NEW PLAYLIST')
+const { Playlist, Track } = require('../models/index.js')
+
+
+exports.newPlaylist = (req, res, next) => {
+  const { body } = req;
+  Playlist.create(body)
+  .then((playlist) => {
+    res.status(201).res.send({playlist})
+  })
 }
-const getPlaylistById = (req, res, next) => {
-  console.log('RETIEVEINNG PLAYLIST')
+
+exports.getPlaylistById = (req, res, next) => {
+  const { id } = req.params;
+  Playlist.findById({id})
+  .then((playlist) => {
+    res.status(200).res.send({playlist});
+  })
 }
-const getTracksForPlaylist = (req, res, next) => {
-  console.log('RETIEVING TRACKS FOR PLAYLIST')
+
+exports.getTracksForPlaylist = (req, res, next) => {
+  const { playlist_id } = req.params;
+  Track.find({playlist: playlist_id})
+  .then((tracks) => {
+    res.status(200).res.send({tracks})
+  })
+
+  
 }
-const addTrackToPlaylist = (req, res, next) => {
+exports.addTrackToPlaylist = (req, res, next) => {
   console.log('ADD TRACK TO PLAYLIST')
+  const { playlist_id } = req.params;
+  Track.create({playlist: id})
+  .then((track) => {
+    
+  })
 }
-const getPlaylistComments = (req, res, next) => {
+exports.getPlaylistComments = (req, res, next) => {
   console.log('GET COMMENTS FOR PLAYLIST')
 }
-const addCommentToPlaylist = (req, res, next) => {
+exports.addCommentToPlaylist = (req, res, next) => {
   console.log('MAKE COMMENT ON PLAYLIST')
 }
-const voteOnPlaylist = (req, res, next) => {
+exports.voteOnPlaylist = (req, res, next) => {
   console.log('VOTE ON PLAYLIST')
 }
 
-module.exports = { newPlaylist, getPlaylistById, getTracksForPlaylist, addTrackToPlaylist, getPlaylistComments, addCommentToPlaylist, voteOnPlaylist }

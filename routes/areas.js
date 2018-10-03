@@ -1,5 +1,5 @@
 const areasRouter = require('express').Router()
-const { getAreas, getAreaByCordinates } = require('../controllers/areas.js')
+const { getAreas, getAreasByCity} = require('../controllers/areas.js')
 
 areasRouter.route('/')
   .get(getAreas)
@@ -7,6 +7,6 @@ areasRouter.route('/')
 //Pass longitude & latitude	as query to this endpoint
 //avoid confiflct with endpoint above
 areasRouter.route('/:city_id')
-  get(getAreaByCity)
+  get(getAreasByCity)
 
 module.exports = areasRouter

@@ -1,9 +1,18 @@
-const newProfile = (req, res, next) => {
-  console.log('MAKING NEW PROFILE')
+const {Profile} = require('../models/index.js')
+
+exports.newProfile = (req, res, next) => {
+  const { body } = req
+  Profile.create(body)
+  .then((profile) => {
+    res.status(201).res.send({profile})
+  })
 }
 
-const getProfileById = (req, res, next) => {
-  console.log('RETRIEVE PROFILE FROM DATABASE')
+exports.getProfileById = (req, res, next) => {
+  const { id } = req.params
+  Profile.findById({id})
+  .then((profile) => {
+    res.status(200).res.send({profile})
+  })
 }
 
-module.exports = { newProfile, getProfileById }

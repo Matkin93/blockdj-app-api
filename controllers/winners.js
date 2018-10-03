@@ -1,5 +1,12 @@
-const areaWinner = () => {
-  console.log('GET THE WINNER FOR AREA ID')
+const { Winner } = require('../models/index.js')
+
+exports.areaWinner = (req, res, next) => {
+    const { area_id } = req.params
+    Winner.find({area: area_id})
+    .then((winner) => {
+      res.status(200).res.send({winner})
+    })  
+    .catch(next)
 }
 
-module.exports = { areaWinner }
+ 

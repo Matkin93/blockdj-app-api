@@ -1,7 +1,7 @@
 const { Area } = require('../models/index.js')
 
 
-module.exports.getAreas = (req, res, next) => {
+exports.getAreas = (req, res, next) => {
   Area.find({})
     .then((areas) => {
       res.status(200).res.send({areas})
@@ -9,7 +9,7 @@ module.exports.getAreas = (req, res, next) => {
     .catch(next)
 }
 
-module.exports.getAreasByCity = (req, res, next) => {
+exports.getAreasByCity = (req, res, next) => {
   const {city_id} = req.params
   Area.find({city: city_id})
   .then((cityAreas) => {
