@@ -6,7 +6,7 @@ areasRouter.route('/')
   
 //Pass longitude & latitude	as query to this endpoint
 //avoid confiflct with endpoint above
-areasRouter.route('/area')
-  get(getAreaByCordinates)
+areasRouter.route('/:city_id')
+  get(getAreaByCity)
 
 module.exports = areasRouter
