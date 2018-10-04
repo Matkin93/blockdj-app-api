@@ -1,4 +1,4 @@
-const { Playlist, Track } = require('../models/index.js')
+const { Playlist, Track, Comment, Vote } = require('../models/index.js')
 
 
 exports.newPlaylist = (req, res, next) => {
@@ -29,21 +29,38 @@ exports.getTracksForPlaylist = (req, res, next) => {
 
   
 }
+
 exports.addTrackToPlaylist = (req, res, next) => {
-  console.log('ADD TRACK TO PLAYLIST')
   const { playlist_id } = req.params;
-  Track.create({playlist: id})
+  Track.create({playlist: playlist_id})
   .then((track) => {
-    
+    res.status(201).res.send({track})
   })
+  .catch(next)
 }
 exports.getPlaylistComments = (req, res, next) => {
-  console.log('GET COMMENTS FOR PLAYLIST')
+  const { playlist_id } = req.params
+  Comment.find({playlist: playlist_id})
+  .then((comments) => {
+    res.status(200).res.send({comments})
+  })
+  .catch(next)
 }
 exports.addCommentToPlaylist = (req, res, next) => {
-  console.log('MAKE COMMENT ON PLAYLIST')
+  const { playlist_id } = req.params
+  const { body } = req
+  Comment.create({playlist: playlist_id})
+  .then((comment) => {
+    res.status(201).res.send({comment})
+  })
+  .catch(next)
 }
 exports.voteOnPlaylist = (req, res, next) => {
-  console.log('VOTE ON PLAYLIST')
+  const { playlist_id } = req.params
+  Vote.create({playlist: playlist_id})
+  then((vote) => {
+    res.status(200).res.send({vote})
+  })
+  .catch(next)
 }
 

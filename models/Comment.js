@@ -7,6 +7,10 @@ const CommentSchema = new Schema({
     ref: 'profiles',
     required: true
   },
+  playlist: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: playlists
+  },
   body: {
     type: String,
     required: true
