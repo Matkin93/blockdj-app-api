@@ -9,7 +9,7 @@
  * https://developer.spotify.com/web-api/authorization-guide/#authorization_code_flow
  */
 
-const {spotifyCredentials: { client_id, client_secret }} = require('../config/config.js')
+const {spotifyCredentials: { client_id, client_secret }} = require('../config/spotifyConfig.js')
 const request = require('request'); 
 const querystring = require('querystring');
 const cookieParser = require('cookie-parser');

@@ -4,7 +4,7 @@ const bodyparser = require('body-parser')
 const apiRouter = require('./routes/api.js')
 const cors = require('cors')
 const mongoose = require('mongoose')
-const { DB_URL } = require('./config/config.js')
+const { DB_URL } = require('./config/spotifyConfig.js')
 
 app.use(cors())
 app.use(bodyparser)

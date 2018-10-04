@@ -5,16 +5,16 @@ playlistsRouter.route('/')
   .post(newPlaylist)
 
 playlistsRouter.route('/:playlist_id')
-  .post(getPlaylistById)
+  .get(getPlaylistById)
 
 playlistsRouter.route('/:playlist_id/tracks')
   .get(getTracksForPlaylist)
   .post(addTrackToPlaylist)
 
-playlistsRouter.route('/:playlist/comments')
+playlistsRouter.route('/:playlist_id/comments')
   .get(getPlaylistComments)
   .post(addCommentToPlaylist)
 
 playlistsRouter.route('/:playlist_id/vote?direction')
-  .post(voteOnPlaylist)
+  .patch(voteOnPlaylist)
 module.exports = playlistsRouter
