@@ -1,9 +1,9 @@
 const profilesRouter = require('express').Router()
-const db = require('../controllers/profiles.js')
+const {newProfile, getProfileById} = require('../controllers/profiles.js')
 
 profilesRouter.route('/')
-  .post(db.newProfile)
+  .post(newProfile)
 
 profilesRouter.route('/:id')
-  .get(db.getProfileById)
+  .get(getProfileById)
 module.exports = profilesRouter

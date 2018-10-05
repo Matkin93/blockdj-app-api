@@ -6,7 +6,6 @@ exports.newProfile = (req, res, next) => {
   .then((profile) => {
     res.status(201).res.send({profile})
   })
-  .catch(next)
 }
 
 exports.getProfileById = (req, res, next) => {
@@ -15,6 +14,5 @@ exports.getProfileById = (req, res, next) => {
   .then((profile) => {
     res.status(200).res.send({profile})
   })
-  .catch(next)
 }
 
