@@ -23,6 +23,7 @@
     "dayjs": "^1.7.7",
     "express": "^4.16.3",
     "faker": "^4.1.0",
-    "mongoose": "^5.3.0"
+    "mongoose": "^5.3.0",
+    "nodemon": "^1.18.4"
   }
 }
