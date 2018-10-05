@@ -1,6 +1,8 @@
-const app = require('./app.js')
+const {PORT = require('./config/databaseConfig').PORT} = process.env;
 
-const port = 7777
-app.listen(port, () => {
-  console.log(`listen on port ${port}...`)
+const app = require('./app');
+
+app.listen(PORT, err => {
+    if (err) console.log(err);
+    else console.log(`Server listening on port ${PORT}...`);
 })

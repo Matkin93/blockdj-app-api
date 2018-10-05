@@ -7,7 +7,7 @@ areasRouter.route('/')
 //Pass longitude & latitude	as query to this endpoint
 //avoid confiflct with endpoint above
 areasRouter.route('/:city_id')
-  get(getAreasByCity)
+  .get(getAreasByCity)
 
 
 

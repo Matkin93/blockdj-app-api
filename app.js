@@ -4,6 +4,8 @@ const bodyparser = require('body-parser')
 const apiRouter = require('./routes/api.js')
 const cors = require('cors')
 const mongoose = require('mongoose')
+const jwt = require('express-jwt');
+const jwks = require('jwks-rsa');
 const { DB_URL } = require('./config/databaseConfig.js')
 
 const jwtCheck = jwt({
@@ -39,9 +41,12 @@ app.use((err, req, res, next) => {
 })
 
 app.use((err, req, res, next) => {
-  if (err.status !== 404 && err.status !== 400) {
+  if (err.status !== 404 && err.status !== 400 && err.status !== 401) {
       err.status = 500
       err.msg = 'Something has gone horribly wrong'
+  }
+  if (err.status === 401){
+      err.msg = 'Unauthorised';
   }
   res.status(err.status).send({msg: err.msg})
 })
