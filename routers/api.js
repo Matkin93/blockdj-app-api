@@ -6,10 +6,10 @@ const areasRouter = require('./areas.js')
 //const winnersRouter = require('./winners.js')
 
 
-// apiRouter.route('/')
-//     .get((req, res, next) => {
-//         res.status(200).send('I am authed and loving it');
-//     })
+apiRouter.route('/test')
+	.get((req, res, next) => {
+		res.status(200).send('I am authed and loving it');
+	})
 
 
 apiRouter.use('/areas', areasRouter)
