@@ -20,4 +20,5 @@ playlistsRouter.route('/:playlist_id/comments')
 
 playlistsRouter.route('/:playlist_id/vote?direction')
   .patch(db.voteOnPlaylist)
+  
 module.exports = playlistsRouter
