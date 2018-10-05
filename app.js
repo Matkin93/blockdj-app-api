@@ -6,11 +6,26 @@ const cors = require('cors')
 const mongoose = require('mongoose')
 const { DB_URL } = require('./config/databaseConfig.js')
 
+const jwtCheck = jwt({
+  secret: jwks.expressJwtSecret({
+      cache: true,
+      rateLimit: true,
+      jwksRequestsPerMinute: 5,
+      jwksUri: "https://blockdj.eu.auth0.com/.well-known/jwks.json"
+  }),
+  audience: 'http://blockdj-app-api.example.com',
+  issuer: "https://blockdj.eu.auth0.com/",
+  algorithms: ['RS256']
+});
 
-app.use(cors())
-app.use(bodyparser)
+app.use(jwtCheck);
 
-app.use('/api', apiRouter)
+app.use(cors());
+
+app.use(bodyparser);
+
+app.use('/api', apiRouter);
+
 app.use('/*', (req, res, next) => {
   next({status: 400, msg: 'page not found'})
 })
