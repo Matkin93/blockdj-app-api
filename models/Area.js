@@ -21,7 +21,7 @@ const AreaSchema = new Schema({
     type: [
       {latitude: Number, longitude: Number}
     ],
-    required: true
+    // required: true
 
   },
   created_at: {

@@ -34,7 +34,7 @@ const ProfileSchema = new Schema({
   },
   avatar_url: {
     type: String,
-    required: true
+
 
   }
 })

@@ -64,3 +64,12 @@ exports.voteOnPlaylist = (req, res, next) => {
   .catch(next)
 }
 
+exports.getPlaylistsInArea = (req, res, next) => {
+  const { area_id } = req.params;
+  Playlist.find({area: area_id})
+  .then((playlists) => {
+    res.status(200).res.send(playlists)
+  })
+  .catch(next)
+}
+

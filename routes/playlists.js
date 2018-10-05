@@ -1,20 +1,23 @@
 const playlistsRouter = require('express').Router()
-const { newPlaylist, getPlaylistById, getTracksForPlaylist, addTrackToPlaylist, getPlaylistComments, addCommentToPlaylist } = require('../controllers/playlists.js')
+const db = require('../controllers/playlists.js')
 
 playlistsRouter.route('/')
-  .post(newPlaylist)
+  .post(db.newPlaylist)
+
+playlistsRouter.route('/area_id')
+  .get(db.getPlaylistsInArea)
 
 playlistsRouter.route('/:playlist_id')
-  .get(getPlaylistById)
+  .get(db.getPlaylistById)
 
 playlistsRouter.route('/:playlist_id/tracks')
-  .get(getTracksForPlaylist)
-  .post(addTrackToPlaylist)
+  .get(db.getTracksForPlaylist)
+  .post(db.addTrackToPlaylist)
 
 playlistsRouter.route('/:playlist_id/comments')
-  .get(getPlaylistComments)
-  .post(addCommentToPlaylist)
+  .get(db.getPlaylistComments)
+  .post(db.addCommentToPlaylist)
 
 playlistsRouter.route('/:playlist_id/vote?direction')
-  .patch(voteOnPlaylist)
+  .patch(db.voteOnPlaylist)
 module.exports = playlistsRouter

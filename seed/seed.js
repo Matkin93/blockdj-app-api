@@ -1,54 +1,56 @@
-const {DB_URL} = require('../config/config.js')
 const mongoose = require('mongoose')
+const util = require('../utils.js')
 const { Profile, Area, City, Comment, Playlist, Track, Vote, Winner } = require('../models/index.js')
-const mock = require('../mock.js')
 
 
-mongoose.connect(DB_URL, {useNewUrlParser: true})
-.then(() => {
-  console.log(`connected to ${DB_URL}`)
+const seedDB = async ({areas, cities, comments, playlists, profiles, tracks, votes, winners})  => {
+
   console.log('Dropping Database...')
-  return mongoose.connection.dropDatabase();
-})
-.then(() => {
-  const profiles = Array.from({length: 20}, mock.createProfile)
-  const cities = Array.from({length: 10}, mock.createCity)
-  return Promise.all(
-    [
-      Profile.insertMany(profiles),
-      City.insertMany(cities)
-    ]
-  ) 
-})
-.then(() => {
-  const areas = Array.from({length: 10}, mock.createArea)
-  const comments = Array.from({length: 30}, mock.createCommment)
-  return Promise.all(
-    [
-      Area.insertMany(areas),
-      Comment.insertMany(comments)
-    ]
-  )
-})
-.then(() => {
-  const playlists = Array.from({length: 10}, mock.createPlaylist)
-  return Playlist.insertMany(playlists)
-})
-.then(() => {
-  const tracks = Array.from({length: 20}, mock.createTrack)
-  const votes = Array.from({length: 50}, mock.createVote)
-  const winners = Array.from({length: 5}, mock.createWinner)
-  return Promise(
-    [
-      Track.insertMany(tracks),
-      Vote.insertMany(votes),
-      Winnner.insertMany(winners)
+  return mongoose.connection.dropDatabase()
+  .then(() => {
+    return Promise.all(
+      [
+        Profile.insertMany(profiles),
+        City.insertMany(cities)
+      ]
+    ) 
+  })
+  .then(([profileDocs, cityDocs]) => {
+    return Promise.all(
+      [
+        profileDocs, 
+        cityDocs,
+        Area.insertMany(util.formatAreaData(areas, cityDocs)),
+        Comment.insertMany(util.formatCommentData(comments, profileDocs))
+      ]
+    )
+  })
+  .then(([profileDocs, cityDocs, areaDocs, commentDocs]) => {
+    return Promise.all(
+      [
+        profileDocs,
+        cityDocs,
+        areaDocs,
+        commentDocs,
+        Playlist.insertMany(util.formatPlaylistData(playlists, profileDocs, areaDocs))
+      ]
+    )
+  })
+  .then(([profileDocs, cityDocs, areaDocs, commentDocs, playlistDocs]) => {
+    return Promise.all(
+      [
+        profileDocs,
+        cityDocs,
+        areaDocs,
+        commentDocs,
+        playlistDocs,
+        Track.insertMany(util.formatTrackData(tracks, playlistDocs)),
+        Vote.insertMany(util.formatVoteData(votes, profileDocs, playlistDocs)),
+        Winner.insertMany(util.formatWinnerData(winners, profileDocs, areaDocs, playlistDocs))
+      ]
+    )
+  })
+  .catch(console.log)
+}
 
-    ]
-  )
-})
-.then(() => {
-  mongoose.disconnect()
-  console.log(`disconnected from ${DB_URL}`)
-})
-.catch(console.error)
+module.exports = seedDB

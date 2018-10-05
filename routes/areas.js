@@ -9,4 +9,6 @@ areasRouter.route('/')
 areasRouter.route('/:city_id')
   get(getAreasByCity)
 
+
+
 module.exports = areasRouter

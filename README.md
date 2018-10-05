@@ -1,9 +1,13 @@
 # blockdj-app-api
 App api repo for our location based playlist
 
-To use the database create a spotifyConfig.js file and a databaseConfig.js inside a config directory. 
+---
 
-###spotifyConfig.js
+Run `npm install` to install all the dependancies for this api 
+
+Create a spotifyConfig.js file and a databaseConfig.js inside a config directory. 
+
+### spotifyConfig.js
 ```javascript
 const spotifyCredentials = {
   client_id: '******** CLIENT ID ********',
@@ -12,9 +16,12 @@ const spotifyCredentials = {
 }
 module.exports = spotifyCredentials
 ```
+---
 
-###databaseConfig.js
+### databaseConfig.js
 ```javascript
+
+
 const ENV = process.env.NODE_ENV || 'development';
 
 const config = {
@@ -31,6 +38,7 @@ const config = {
 } 
 module.exports = config[ENV];
 ```
+---
 ##API Methods
 
 | Endpoint                        | Method | Description                 |
