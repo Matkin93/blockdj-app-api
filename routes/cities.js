@@ -1,7 +1,7 @@
 const citiesRouter = require('express').Router()
-const getCities = require('../controllers/cities.js')
+const db = require('../controllers/cities.js')
 
 citiesRouter.route('/')
-  .get(getCities)
+  .get(db.getCities)
 
 module.exports = citiesRouter

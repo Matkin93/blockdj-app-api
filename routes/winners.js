@@ -1,7 +1,7 @@
 const winnersRouter = require('express').Router()
-const areaWinner = require('../controllers/winners.js')
+const db = require('../controllers/winners.js')
 
 winnersRouter.route('/:area_id')
-  .get(areaWinner)
+  .get(db.areaWinner)
   
 module.exports = winnersRouter
