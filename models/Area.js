@@ -19,18 +19,14 @@ const AreaSchema = new Schema({
   },
   bounds: {
     type: [
-      {latitude: Number, longitude: Number}
+      { latitude: Number, longitude: Number }
     ],
-    // required: true
-
+    required: true
   },
   created_at: {
     type: Date,
     default: Date.now
-  },
-  updated_at: {
-    type: Date
-  }  
+  }
 });
 
 

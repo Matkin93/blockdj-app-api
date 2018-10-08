@@ -6,5 +6,6 @@ module.exports = {
   Profile: require('./Profile.js'),
   Track: require('./Track.js'),
   Vote: require('./Vote.js'),
-  Winner: require('./Winner.js')
+  Winner: require('./Winner.js'),
+  UserPlaylsit: require('./UserPlaylist')
 }

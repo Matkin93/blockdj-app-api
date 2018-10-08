@@ -6,13 +6,19 @@ const CitySchema = new Schema({
     type: String,
     required: true
   },
+  coordinates: {
+    type: [
+      { latitude: Number, longitude: Number }
+    ],
+    required: true
+  },
   created_at: {
     type: Date,
     default: Date.now
   },
   updated_at: {
     type: Date
-  }  
+  }
 });
 
 module.exports = mongoose.model('cities', CitySchema);

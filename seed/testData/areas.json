@@ -1,32 +1,148 @@
 [
   {
-    "name":"Northcoders Block",
-    "city":"Manchester",
-    "colour":"Blue"
+    "name": "Northcoders Block",
+    "city": "Manchester",
+    "colour": "Blue",
+    "bounds": [
+      {
+        "latitude": 53.485695,
+        "longitude": -2.239615
+      },
+      {
+        "latitude": 53.486208,
+        "longitude": -2.241167
+      },
+      {
+        "latitude": 53.486773,
+        "longitude": -2.240859
+      },
+      {
+        "latitude": 53.486248,
+        "longitude": -2.239273
+      }
+    ]
   },
   {
-    "name":"Piccadilly",
-    "city":"Manchester",
-    "colour":"Black"
+    "name": "Piccadilly",
+    "city": "Manchester",
+    "colour": "Black",
+    "bounds": [
+      {
+        "latitude": 53.486196968335136,
+        "longitude": -2.2359145558205
+      },
+      {
+        "latitude": 53.481518879521516,
+        "longitude": -2.227015072296922
+      },
+      {
+        "latitude": 53.48186415564243,
+        "longitude": -2.230208644603522
+      },
+      {
+        "latitude": 53.48157614811416,
+        "longitude": -2.231231865247196
+      },
+      {
+        "latitude": 53.480873844102014,
+        "longitude": -2.2306954234442173
+      },
+      {
+        "latitude": 53.48029901524724,
+        "longitude": -2.2324561665915326
+      },
+      {
+        "latitude": 53.48123373546192,
+        "longitude": -2.2334539890289307
+      },
+      {
+        "latitude": 53.482121,
+        "longitude": -2.237719
+      },
+      {
+        "latitude": 53.481955,
+        "longitude": -2.238277
+      },
+      {
+        "latitude": 53.482223,
+        "longitude": -2.239435
+      },
+      {
+        "latitude": 53.484751,
+        "longitude": -2.238727
+      }
+    ]
   },
   {
-    "name":"Arndale",
-    "city":"Manchester",
-    "colour":"Red"
+    "name": "Arndale",
+    "city": "Manchester",
+    "colour": "Red",
+    "bounds": [
+      {
+        "latitude": 53.474751,
+        "longitude": -2.234727
+      }
+    ]
   },
   {
-    "name":"Wilson Square",
-    "city":"Huddersfield",
-    "colour":"Yellow"
+    "name": "Wilson Square",
+    "city": "Huddersfield",
+    "colour": "Yellow"
   },
   {
-    "name":"Berry Brow",
-    "city":"Huddersfield",
-    "colour":"Pink"
+    "name": "Berry Brow",
+    "city": "Huddersfield",
+    "colour": "Pink",
+    "bounds": [
+      {
+        "latitude": 53.486196968335136,
+        "longitude": -2.2359145558205
+      },
+      {
+        "latitude": 53.481518879521516,
+        "longitude": -2.227015072296922
+      },
+      {
+        "latitude": 53.48186415564243,
+        "longitude": -2.230208644603522
+      },
+      {
+        "latitude": 53.48157614811416,
+        "longitude": -2.231231865247196
+      },
+      {
+        "latitude": 53.480873844102014,
+        "longitude": -2.2306954234442173
+      },
+      {
+        "latitude": 53.48029901524724,
+        "longitude": -2.2324561665915326
+      },
+      {
+        "latitude": 53.48123373546192,
+        "longitude": -2.2334539890289307
+      },
+      {
+        "latitude": 53.482121,
+        "longitude": -2.237719
+      },
+      {
+        "latitude": 53.481955,
+        "longitude": -2.238277
+      },
+      {
+        "latitude": 53.482223,
+        "longitude": -2.239435
+      },
+      {
+        "latitude": 53.484751,
+        "longitude": -2.238727
+      }
+    ]
   },
   {
-    "name":"Kingsgate",
-    "city":"Huddersfield",
-    "colour":"Purple"
+    "name": "Kingsgate",
+    "city": "Huddersfield",
+    "colour": "Purple"
   }
 ]

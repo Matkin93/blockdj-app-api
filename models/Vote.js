@@ -12,12 +12,8 @@ const VoteSchema = new Schema({
     ref: 'playlists',
     required: true
   },
-  direction: {
-   /* not sure we need to store the direction */
-  },
-  votes: {
-    type: Number,
-    default: 0
+  vote: {
+    type: Number
   },
   created_at: {
     type: Date,

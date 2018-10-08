@@ -1,6 +1,24 @@
 [
   {
-    "name": "Manchester"
+    "name": "Manchester",
+    "coordinates": [
+      {
+        "latitude": 53.494250,
+        "longitude": -2.264204
+      },
+      {
+        "latitude": 53.491607,
+        "longitude": -2.199302
+      },
+      {
+        "latitude": 53.462568,
+        "longitude": -2.206209
+      },
+      {
+        "latitude": 53.467233,
+        "longitude": -2.274939
+      }
+    ]
   },
   {
     "name": "Huddersfield"

@@ -3,7 +3,8 @@
     "username": "rkerwen0",
     "name": "Rand Kerwen",
     "email": "rkerwen0@tamu.edu",
-    "bio": "Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor."
+    "bio": "Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor.",
+    "avatar_url": "https://cdn.davidwolfe.com/wp-content/uploads/2016/03/intense-person.jpg"
   },
   {
     "username": "ksouthouse1",
@@ -15,6 +16,30 @@
     "username": "rcorssen2",
     "name": "Ruy Corssen",
     "email": "rcorssen2@dyndns.org",
+    "bio": "Vivamus tortor. Duis mattis egestas metus. Aenean fermentum."
+  },
+  {
+    "username": "rando",
+    "name": "Ruy Cwfdw",
+    "email": "rcorssen2@dywedwndns.org",
+    "bio": "Vivamus tortor. Duis mattis egestas metus. Aenean fermentum."
+  },
+  {
+    "username": "rando1",
+    "name": "Ruy Corweddcwwen",
+    "email": "rcorswedn2@dyndns.odcrg",
+    "bio": "Vivamus tortor. Duis mattis egestas metus. Aenean fermentum."
+  },
+  {
+    "username": "rando2",
+    "name": "Ruy Corwedwen",
+    "email": "rcorswedn2@dyndns.org",
+    "bio": "Vivamus tortor. Duis mattis egestas metus. Aenean fermentum."
+  },
+  {
+    "username": "rando3",
+    "name": "Ruy Corwedwn",
+    "email": "rcorsswedw@dyndns.org",
     "bio": "Vivamus tortor. Duis mattis egestas metus. Aenean fermentum."
   }
 ]
