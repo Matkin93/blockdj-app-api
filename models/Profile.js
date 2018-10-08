@@ -34,8 +34,6 @@ const ProfileSchema = new Schema({
   },
   avatar_url: {
     type: String,
-
-
   }
 })
 module.exports = mongoose.model('profiles', ProfileSchema);

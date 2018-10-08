@@ -1,11 +1,11 @@
 exports.formatAreaData = (areaData, cityDocs) => {
   return areaData.map((areaDatum) => {
-    const cityID = cityDocs.find((city) => {      
+    const cityID = cityDocs.find((city) => {
       if (city.name === areaDatum.city) {
         return city
       }
-    })   
-    return {...areaDatum, city: cityID._id}
+    })
+    return { ...areaDatum, city: cityID._id }
   })
 }
 
@@ -16,7 +16,7 @@ exports.formatCommentData = (commentData, profileDocs) => {
         return profile
       }
     })
-    return {...commentDatum, profile: profileID._id}
+    return { ...commentDatum, profile: profileID._id }
   })
 }
 
@@ -32,7 +32,7 @@ exports.formatPlaylistData = (playlistData, profileDocs, areaDocs) => {
         return area
       }
     })
-    return {...playlistDatum, profile: profileID._id, area: areaID._id}
+    return { ...playlistDatum, profile: profileID._id, area: areaID._id }
   })
 }
 
@@ -43,7 +43,7 @@ exports.formatTrackData = (trackData, playlistDocs) => {
         return playlist
       }
     })
-    return {...trackDatum, playlist: playlistID._id}
+    return { ...trackDatum, playlist: playlistID._id }
   })
 }
 
@@ -59,11 +59,11 @@ exports.formatVoteData = (voteData, profileDocs, playlistDocs) => {
         return playlist
       }
     })
-    return {...voteDatum, profile: profileID._id, playlist: playlistID._id}
+    return { ...voteDatum, profile: profileID._id, playlist: playlistID._id }
   })
 }
 
-exports.formatWinnerData = (winnerData, profileDocs, areaDocs, playlistDocs) => {  
+exports.formatWinnerData = (winnerData, profileDocs, areaDocs, playlistDocs) => {
   return winnerData.map((winnerDatum) => {
     const profileID = profileDocs.find((profile) => {
       if (profile.username === winnerDatum.profile) {
@@ -78,7 +78,7 @@ exports.formatWinnerData = (winnerData, profileDocs, areaDocs, playlistDocs) => 
     const playlistID = playlistDocs.find((playlist) => {
       if (playlist.name === winnerDatum.playlist) {
         return playlist
-      }      
+      }
     })
     return { ...winnerDatum, profile: profileID._id, area: areaID._id, playlist: playlistID._id }
   })

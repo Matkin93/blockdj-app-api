@@ -1,32 +1,54 @@
 [
   {
     "profile": "rkerwen0",
-    "area":"Northcoders Block",
-    "name":"Off The Wall Redux"
+    "area": "Northcoders Block",
+    "name": "Off The Wall Redux",
+    "tracks": [
+      {
+        "title": "magic",
+        "artist": "bob",
+        "album": "magic the album"
+      },
+      {
+        "title": "magic2",
+        "artist": "bob",
+        "album": "magic the album"
+      },
+      {
+        "title": "magic3",
+        "artist": "bob",
+        "album": "magic the album"
+      },
+      {
+        "title": "magic4",
+        "artist": "bob",
+        "album": "magic the album"
+      }
+    ]
   },
   {
     "profile": "rkerwen0",
-    "area":"Piccadilly",
-    "name":"Meterora 2"
+    "area": "Piccadilly",
+    "name": "Meterora 2"
   },
   {
     "profile": "rkerwen0",
-    "area":"Arndale",
-    "name":"Badder"
+    "area": "Arndale",
+    "name": "Badder"
   },
   {
     "profile": "ksouthouse1",
-    "area":"Wilson Square",
-    "name":"Bond Hits"
+    "area": "Wilson Square",
+    "name": "Bond Hits"
   },
   {
     "profile": "ksouthouse1",
-    "area":"Berry Brow",
-    "name":"Classical Masterpiece"
+    "area": "Berry Brow",
+    "name": "Classical Masterpiece"
   },
   {
     "profile": "rcorssen2",
-    "area":"Kingsgate",
-    "name":"Twice"
+    "area": "Kingsgate",
+    "name": "Twice"
   }
 ]

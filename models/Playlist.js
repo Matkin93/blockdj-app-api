@@ -12,6 +12,11 @@ const PlaylistSchema = new Schema({
     ref: 'areas',
     required: true
   },
+  tracks: {
+    type: [
+      { title: String, artist: String, album: String }
+    ]
+  },
   name: {
     type: String,
     required: true

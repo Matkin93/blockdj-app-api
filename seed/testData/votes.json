@@ -1,17 +1,32 @@
 [
   {
-    "profile": "rkerwen0",
-    "playlist": "Meterora 2",
-    "votes" : 10
+    "profile": "rando",
+    "playlist": "Off The Wall Redux",
+    "votes": -1
+  },
+  {
+    "profile": "rando1",
+    "playlist": "Off The Wall Redux",
+    "votes": -1
+  },
+  {
+    "profile": "rando2",
+    "playlist": "Off The Wall Redux",
+    "votes": -1
+  },
+  {
+    "profile": "rando3",
+    "playlist": "Off The Wall Redux",
+    "votes": 1
   },
   {
     "profile": "ksouthouse1",
     "playlist": "Classical Masterpiece",
-    "votes" : 10
+    "votes": 1
   },
   {
     "profile": "rcorssen2",
     "playlist": "Twice",
-    "votes" : 10
+    "vote": 1
   }
 ]
