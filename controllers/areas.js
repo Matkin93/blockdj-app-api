@@ -11,7 +11,6 @@ exports.getAreas = (req, res, next) => {
 }
 
 exports.getAreasByCity = (req, res, next) => {
-<<<<<<< HEAD
   const {city_id} = req.params
   Area.find({city: city_id})
   .then((cityAreas) => {
@@ -20,13 +19,7 @@ exports.getAreasByCity = (req, res, next) => {
     res.status(200).send({cityAreas})
   })
   .catch(next)
-=======
-  const { city_id } = req.params
-  Area.find({ city: city_id })
-    .then((cityAreas) => {
-      res.status(200).send({ cityAreas })
-    })
-    .catch(next)
+
 }
 
 exports.getAreasByCityCoordinates = (req, res, next) => {
@@ -43,6 +36,5 @@ exports.getAreasByCityCoordinates = (req, res, next) => {
         }
       })
     })
->>>>>>> 760be865579c35964d53332f7381f58135d543a1
 }
 
