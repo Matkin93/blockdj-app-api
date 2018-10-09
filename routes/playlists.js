@@ -11,7 +11,6 @@ playlistsRouter.route('/:cityId')
   .get(db.getPlaylistsByAreaCoords)
 
 playlistsRouter.route('/:playlist_id')
-  .patch(db.voteOnPlaylist)
   .get(db.getPlaylistById)
 
 playlistsRouter.route('/:playlist_id/tracks')
@@ -22,7 +21,10 @@ playlistsRouter.route('/:playlist_id/comments')
   .get(db.getPlaylistComments)
   .post(db.addCommentToPlaylist)
 
+playlistsRouter.route('/:playlist_id/votes')
+  .patch(db.voteOnPlaylist)
 
-  
+
+
 
 module.exports = playlistsRouter

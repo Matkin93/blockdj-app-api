@@ -19,8 +19,10 @@ exports.newPlaylist = (req, res, next) => {
 
 exports.getPlaylistById = (req, res, next) => {
   const { id } = req.params;
+  console.log(id);
   Playlist.findById({ id })
     .then((playlist) => {
+      console.log(playlist)
       res.status(200).send({ playlist });
     })
     .catch(next)
@@ -65,11 +67,13 @@ exports.addCommentToPlaylist = (req, res, next) => {
 
 exports.voteOnPlaylist = (req, res, next) => {
   const { playlist_id } = req.params
+  console.log(playlist_id);
   const upvote = 1
-  Playlist.findByIdAndUpdate( playlist_id, { $inc: {'votes': upvote}}, {new: true})
-  .then((playlist) => {
-    res.status(200).send({ playlist })
-  })
+  Playlist.findByIdAndUpdate(playlist_id, { $inc: { 'votes': upvote } }, { new: true })
+    .then((playlist) => {
+      console.log(playlist);
+      res.status(200).send({ playlist })
+    })
     .catch(next)
 }
 
