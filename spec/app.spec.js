@@ -30,6 +30,8 @@ describe('Block DJ APP', () => {
     })
   })
 
+  
+
   describe('Area Router', () => {
     describe('/areas', () => {
       it('GET: returns all the areas in database', (done) => {
@@ -76,6 +78,36 @@ describe('Block DJ APP', () => {
           done()
         })
       } )
+    })
+  })
+
+  describe('City Router', () => {
+    describe('/api/cities/', () => {
+      it('GET: Return all cities in the database', () => {
+        return request.get(`/api/cities/`)
+        .expect(200)
+        .then((res) => {
+          expect(res.body).toHaveProperty('cities')
+          expect(res.body.cities[0]).toHaveProperty('_id')
+          expect(res.body.cities[0]).toHaveProperty('name')
+          expect(res.body.cities[0]).toHaveProperty('created_at')
+          expect(res.body.cities[0]).toHaveProperty('__v')
+          done();
+        })
+      })
+    })
+  })
+
+  describe('Playlist Router', () => {
+    describe('/api/playlists/', () => {
+      it('POST: Add a playlist', () => {
+        return request.post(`/api/playlists/`)
+        .expect(201)
+        .then((res) => {
+          
+        })
+      }
+      )
     })
   })
 
