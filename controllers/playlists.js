@@ -65,9 +65,10 @@ exports.addCommentToPlaylist = (req, res, next) => {
 
 exports.voteOnPlaylist = (req, res, next) => {
   const { playlist_id } = req.params
-  Vote.create({ playlist: playlist_id })
-  then((vote) => {
-    res.status(200).send({ vote })
+  const upvote = 1
+  Playlist.findByIdAndUpdate( playlist_id, { $inc: {'votes': upvote}}, {new: true})
+  .then((playlist) => {
+    res.status(200).send({ playlist })
   })
     .catch(next)
 }

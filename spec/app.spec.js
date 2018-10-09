@@ -22,7 +22,7 @@ describe('Block DJ APP', () => {
       .then((docs) => {
         return [areaDocs, cityDocs, commentDocs, playlistDocs, profileDocs, trackDocs, voteDocs, winnerDocs] = docs
       })
-  }, 20000)
+  })
   afterAll(() => {
     console.log('Closing Database')
     return mongoose.disconnect(()=> {
@@ -98,13 +98,14 @@ describe('Block DJ APP', () => {
     })
   })
 
-  describe('Playlist Router', () => {
-    describe('/api/playlists/', () => {
-      it('POST: Add a playlist', () => {
-        return request.post(`/api/playlists/`)
-        .expect(201)
+  describe.only('Playlist Router', () => {
+    describe('/api/playlists/:playlist_id', () => {
+      it('PATCH: vote on a playlist', () => {
+        return request.patch(`/api/playlists/${playlist[0]._id}`)
+        .expect(200)
         .then((res) => {
-          
+          console.log(res.body)
+          expect(res.body.playlist.votes).toBe(241)
         })
       }
       )
