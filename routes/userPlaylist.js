@@ -1,7 +1,8 @@
 const userPlaylistsRouter = require('express').Router()
 const db = require('../controllers/userPlaylists.js')
 
-userPlaylistsRouter.route('/')
+userPlaylistsRouter.route('/:user')
+  .get(db.getUserPlaylists)
   .post(db.newUserPlaylist)
 
-module.exports = userPlaylistsRouter
+module.exports = userPlaylistsRouter;

@@ -7,5 +7,5 @@ module.exports = {
   Track: require('./Track.js'),
   Vote: require('./Vote.js'),
   Winner: require('./Winner.js'),
-  UserPlaylsit: require('./UserPlaylist')
+  UserPlaylist: require('./UserPlaylist')
 }

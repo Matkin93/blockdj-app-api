@@ -17,6 +17,10 @@ const PlaylistSchema = new Schema({
       { title: String, artist: String, album: String }
     ]
   },
+  votes: {
+    type: Number,
+    default: 0
+  },
   name: {
     type: String,
     required: true

@@ -2,7 +2,8 @@
   {
     "name": "Northcoders Block",
     "city": "Manchester",
-    "colour": "Blue",
+    "areaColor": "rgba(170, 25, 170, 0.3)",
+    "description": "Full of nerds",
     "bounds": [
       {
         "latitude": 53.485695,
@@ -20,12 +21,17 @@
         "latitude": 53.486248,
         "longitude": -2.239273
       }
-    ]
+    ],
+    "markerLocation": {
+      "latitude": 53.486807,
+      "longitude": -2.240831
+    }
   },
   {
-    "name": "Piccadilly",
+    "name": "Northern Quarter",
     "city": "Manchester",
-    "colour": "Black",
+    "areaColor": "rgba(225, 55, 0, 0.3)",
+    "description": "Hipster place with looks of cool bars and nice food",
     "bounds": [
       {
         "latitude": 53.486196968335136,
@@ -71,28 +77,64 @@
         "latitude": 53.484751,
         "longitude": -2.238727
       }
-    ]
+    ],
+    "markerLocation": {
+      "latitude": 53.483087,
+      "longitude": -2.235221
+    }
+  },
+  {
+    "name": "Piccadilly",
+    "city": "Manchester",
+    "areaColor": "rgba(175, 2, 97, 0.3)",
+    "description": "Coolest train station in manchester, could you be the top dj of this train station?",
+    "bounds": [
+      {
+        "latitude": 53.477954,
+        "longitude": -2.231276
+      },
+      {
+        "latitude": 53.477303,
+        "longitude": -2.227500
+      },
+      {
+        "latitude": 53.476211,
+        "longitude": -2.227672
+      },
+      {
+        "latitude": 53.476741,
+        "longitude": -2.231309
+      }
+    ],
+    "markerLocation": {
+      "latitude": 53.478139,
+      "longitude": -2.231030
+    }
   },
   {
     "name": "Arndale",
     "city": "Manchester",
-    "colour": "Red",
+    "areaColor": "Red",
     "bounds": [
       {
         "latitude": 53.474751,
         "longitude": -2.234727
       }
-    ]
+    ],
+    "markerLocation": {
+      "latitude": 53.474751,
+      "longitude": -2.234727
+    }
   },
   {
     "name": "Wilson Square",
     "city": "Huddersfield",
-    "colour": "Yellow"
+    "areaColor": "Yellow"
   },
   {
     "name": "Berry Brow",
     "city": "Huddersfield",
-    "colour": "Pink",
+    "areaColor": "Pink",
     "bounds": [
       {
         "latitude": 53.486196968335136,
@@ -143,6 +185,6 @@
   {
     "name": "Kingsgate",
     "city": "Huddersfield",
-    "colour": "Purple"
+    "areaColor": "Purple"
   }
 ]

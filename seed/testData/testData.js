@@ -1,4 +1,4 @@
-const testData = 
+const testData =
 {
   areas: require('./areas.json'),
   cities: require('./cities.json'),
@@ -8,6 +8,7 @@ const testData =
   tracks: require('./tracks.json'),
   votes: require('./votes.json'),
   winners: require('./winners.json'),
+  userPlaylists: require('./userPlaylists.json')
 }
 
 module.exports = testData

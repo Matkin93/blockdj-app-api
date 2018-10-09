@@ -1,12 +1,18 @@
-const { Playlist, Track, Comment, Vote, Area } = require('../models/index.js')
+const { Playlist, Track, Comment, Vote, Area, Profile } = require('../models/index.js')
 const inside = require('point-in-polygon');
 
 
 exports.newPlaylist = (req, res, next) => {
   const { body } = req;
-  Playlist.create(body)
-    .then((playlist) => {
-      res.status(201).res.send({ playlist })
+  const username = body.profile;
+  Profile.find({ username: username })
+    .then(profileDoc => {
+      body.profile = profileDoc[0]._id;
+      Playlist.create(body)
+        .then((playlist) => {
+          res.status(201).send({ playlist })
+        })
+        .catch(console.log)
     })
     .catch(next)
 }
@@ -15,7 +21,7 @@ exports.getPlaylistById = (req, res, next) => {
   const { id } = req.params;
   Playlist.findById({ id })
     .then((playlist) => {
-      res.status(200).res.send({ playlist });
+      res.status(200).send({ playlist });
     })
     .catch(next)
 }
@@ -88,20 +94,8 @@ exports.getPlaylistsByAreaCoords = (req, res, next) => {
           Playlist.find({ area: area._id })
             .populate('profile')
             .then(playlists => {
-              Promise.all([Vote.find(), playlists])
-                .then(([voteDocs, playlists]) => {
-                  playlists.map(playlist => {
-                    playlist.votes = [];
-                    voteDocs.forEach(vote => {
-                      vote.playlist === playlist._id && playlist.votes.push(vote);
-
-                    })
-                  })
-                  console.log(playlists[0].tracks)
-                  res.status(200).send({ playlists, area })
-                })
+              res.status(200).send({ playlists, area })
             })
-
         }
       })
     })
