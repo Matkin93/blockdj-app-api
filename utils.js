@@ -83,3 +83,14 @@ exports.formatWinnerData = (winnerData, profileDocs, areaDocs, playlistDocs) => 
     return { ...winnerDatum, profile: profileID._id, area: areaID._id, playlist: playlistID._id }
   })
 }
+
+exports.formatUserPlaylistData = (userPlaylistData, profileDocs) => {
+  return userPlaylistData.map((playlistDatum) => {
+    const profileID = profileDocs.find((profile) => {
+      if (profile.username === playlistDatum.profile) {
+        return profile
+      }
+    })
+    return { ...playlistDatum, profile: profileID._id }
+  })
+}

@@ -4,6 +4,6 @@ const db = require('../controllers/profiles.js')
 profilesRouter.route('/')
   .post(db.newProfile)
 
-profilesRouter.route('/:id')
-  .get(db.getProfileById)
+profilesRouter.route('/:username')
+  .get(db.getProfileByUsername)
 module.exports = profilesRouter

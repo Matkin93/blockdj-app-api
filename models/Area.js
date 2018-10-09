@@ -11,7 +11,7 @@ const AreaSchema = new Schema({
     ref: 'cities',
     required: true
   },
-  colour: {
+  areaColor: {
     type: String
   },
   image_url: {
@@ -22,6 +22,14 @@ const AreaSchema = new Schema({
       { latitude: Number, longitude: Number }
     ],
     required: true
+  },
+  markerLocation: {
+    type: {
+      latitude: Number, longitude: Number
+    }
+  },
+  description: {
+    type: String
   },
   created_at: {
     type: Date,
