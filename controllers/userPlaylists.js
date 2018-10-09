@@ -15,9 +15,10 @@ exports.getUserPlaylists = (req, res, next) => {
 
 exports.newUserPlaylist = (req, res, next) => {
   const { body } = req;
+  // console.log(body)
   UserPlaylist.create(body)
     .then((playlist) => {
       res.status(201).send({ playlist })
     })
-    .catch(next)
+    .catch(console.log)
 }

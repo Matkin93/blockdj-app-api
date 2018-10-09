@@ -12,7 +12,7 @@ exports.newPlaylist = (req, res, next) => {
         .then((playlist) => {
           res.status(201).send({ playlist })
         })
-        .catch(console.log)
+        .catch(next)
     })
     .catch(next)
 }

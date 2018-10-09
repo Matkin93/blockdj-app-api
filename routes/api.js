@@ -14,6 +14,5 @@ apiRouter.use('/cities', citiesRouter)
 apiRouter.use('/winners', winnersRouter)
 apiRouter.use('/profiles', profilesRouter)
 apiRouter.use('/user-playlists', userPlaylistsRouter)
-// apiRouter.use('/spotify')
 
 module.exports = apiRouter

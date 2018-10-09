@@ -5,7 +5,7 @@ const UserPlaylistSchema = new Schema({
   profile: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'profiles',
-    required: true
+    // required: true
   },
   name: {
     type: String,
