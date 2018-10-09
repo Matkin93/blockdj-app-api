@@ -1,7 +1,6 @@
 const { Playlist, Track, Comment, Vote, Area, Profile } = require('../models/index.js')
 const inside = require('point-in-polygon');
 
-
 exports.newPlaylist = (req, res, next) => {
   const { body } = req;
   const username = body.profile;
@@ -12,15 +11,16 @@ exports.newPlaylist = (req, res, next) => {
         .then((playlist) => {
           res.status(201).send({ playlist })
         })
-        .catch(console.log)
     })
     .catch(next)
 }
 
 exports.getPlaylistById = (req, res, next) => {
-  const { id } = req.params;
-  console.log(id);
-  Playlist.findById({ id })
+  console.log(req);
+  const { playlist_id } = req.params;
+  console.log(playlist_id);
+  //Playlist.findOne({ playlist_id: playlist_id })
+  Playlist.findById({ playlist_id })
     .then((playlist) => {
       console.log(playlist)
       res.status(200).send({ playlist });
@@ -69,7 +69,7 @@ exports.voteOnPlaylist = (req, res, next) => {
   const { playlist_id } = req.params
   console.log(playlist_id);
   const upvote = 1
-  Playlist.findByIdAndUpdate(playlist_id, { $inc: { 'votes': upvote } }, { new: true })
+  Playlist.findByIdAndUpdate({ playlist_id, $inc: { 'votes': upvote } }, { new: true })
     .then((playlist) => {
       console.log(playlist);
       res.status(200).send({ playlist })

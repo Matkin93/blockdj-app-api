@@ -3,7 +3,7 @@ const app = express()
 const bodyparser = require('body-parser')
 const apiRouter = require('./routes/api.js')
 const cors = require('cors')
-const mongoose = require('mongoose')
+const mongoose = require('mongoose').set('debug', true);
 const jwt = require('express-jwt');
 const jwks = require('jwks-rsa');
 const { DB_URL = require('./config/databaseConfig.js').DB_URL } = process.env;
@@ -31,8 +31,6 @@ app.use(bodyparser.json());
 //   res.header('Access-Control-Allow-Methods', 'PUT, POST, GET, PATCH, DELETE, OPTIONS');
 //   next();
 // });
-
-
 
 mongoose.connect(DB_URL, { useNewUrlParser: true })
   .then(() => {

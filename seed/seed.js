@@ -2,7 +2,6 @@ const mongoose = require('mongoose')
 const util = require('../utils.js')
 const { Profile, Area, City, Comment, Playlist, Track, Vote, Winner, UserPlaylist } = require('../models/index.js')
 
-
 const seedDB = async ({ areas, cities, comments, playlists, profiles, tracks, votes, winners, userPlaylists }) => {
 
   console.log('Dropping Database...')

@@ -30,8 +30,6 @@ describe('Block DJ APP', () => {
     })
   })
 
-
-
   describe('Area Router', () => {
     describe('/areas', () => {
       it('GET: returns all the areas in database', (done) => {
