@@ -3,15 +3,19 @@ const db = require('../controllers/playlists.js')
 
 playlistsRouter.route('/')
   .post(db.newPlaylist)
+  .get(db.getPlaylists)
 
 playlistsRouter.route('/area_id')
   .get(db.getPlaylistsInArea)
 
-playlistsRouter.route('/:cityId')
-  .get(db.getPlaylistsByAreaCoords)
+// playlistsRouter.route('/:cityId')
+//   .get(db.getPlaylistsByAreaCoords)
 
 playlistsRouter.route('/:playlist_id')
-  .get(db.getPlaylistById)
+  .get((req, res, next) => {
+    console.log('Anything')
+    db.getPlaylistById(req, res, next)
+  })
 
 playlistsRouter.route('/:playlist_id/tracks')
   .get(db.getTracksForPlaylist)

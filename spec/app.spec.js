@@ -1,4 +1,4 @@
-process.env.NODE_ENV = 'test'
+process.env.NODE_ENV = 'development';
 const app = require('../app.js')
 const request = require('supertest')(app)
 const seedDB = require('../seed/seed.js')
@@ -96,13 +96,13 @@ describe('Block DJ APP', () => {
     })
   })
 
-  describe.only('Playlist Router', () => {
+  describe('Playlist Router', () => {
     describe('/api/playlists/:playlist_id/votes', () => {
-      it('PATCH: vote on a playlist', (done) => {
+      it.only('PATCH: vote on a playlist', (done) => {
         return request.patch(`/api/playlists/${playlistDocs[0]._id}/votes`)
           .expect(200)
           .then((res) => {
-            console.log(res.body)
+            console.log(res.body, "<<<<<<<<<<<<<<<VOTES RESPONSE.BODY")
             expect(res.body.playlist.votes).toBe(241)
             done();
           })
@@ -114,7 +114,7 @@ describe('Block DJ APP', () => {
         return request.get(`/api/playlists/${playlistDocs[0]._id}`)
           .expect(200)
           .then(res => {
-            console.log(res.body);
+            // console.log(res.body);
             expect(res.body).toBe(!null)
             done();
           });

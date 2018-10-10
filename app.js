@@ -3,7 +3,7 @@ const app = express()
 const bodyparser = require('body-parser')
 const apiRouter = require('./routes/api.js')
 const cors = require('cors')
-const mongoose = require('mongoose').set('debug', true);
+const mongoose = require('mongoose')
 const jwt = require('express-jwt');
 const jwks = require('jwks-rsa');
 const { DB_URL = require('./config/databaseConfig.js').DB_URL } = process.env;

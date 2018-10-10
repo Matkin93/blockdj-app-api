@@ -15,14 +15,26 @@ exports.newPlaylist = (req, res, next) => {
     .catch(next)
 }
 
+exports.getPlaylists = (req, res, next) => {
+  console.log(req.params);
+  Playlist.find()
+    .then(playlists => {
+      res.status(200).send({ playlists });
+    })
+    .catch(next);
+}
+
 exports.getPlaylistById = (req, res, next) => {
-  console.log(req);
+  console.log(req.params);
   const { playlist_id } = req.params;
   console.log(playlist_id);
   //Playlist.findOne({ playlist_id: playlist_id })
-  Playlist.findById({ playlist_id })
+  // Playlist.find({ _id: playlist_id })
+  Playlist.find()
+    .lean()
     .then((playlist) => {
-      console.log(playlist)
+      // let filteredPlaylist = playlist.filter(() => { return playlist._id === playlist_id })
+      // filteredPlaylist = filteredPlaylist[0];
       res.status(200).send({ playlist });
     })
     .catch(next)
@@ -69,8 +81,9 @@ exports.voteOnPlaylist = (req, res, next) => {
   const { playlist_id } = req.params
   console.log(playlist_id);
   const upvote = 1
-  Playlist.findByIdAndUpdate({ playlist_id, $inc: { 'votes': upvote } }, { new: true })
+  Playlist.findByIdAndUpdate(playlist_id, { $inc: { 'votes': upvote } }, { new: true })
     .then((playlist) => {
+      console.log('Hello');
       console.log(playlist);
       res.status(200).send({ playlist })
     })
