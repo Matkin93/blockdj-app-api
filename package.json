@@ -4,6 +4,7 @@
   "description": "App api repo for our location based playlist",
   "main": "index.js",
   "scripts": {
+    "start": "node listen.js",
     "test": "jest ./spec/app.spec.js",
     "seed": "node ./seed/seed.env.js",
     "seed:production": "NODE_ENV='production' node ./seed/seed.env.js",
