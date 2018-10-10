@@ -1,5 +1,4 @@
 const { Playlist, Track, Comment, Vote, Area, Profile } = require('../models/index.js')
-const inside = require('point-in-polygon');
 
 exports.newPlaylist = (req, res, next) => {
   const { body } = req;

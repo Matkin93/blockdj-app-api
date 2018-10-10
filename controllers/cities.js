@@ -1,4 +1,4 @@
-const { City, Area, City } = require('../models/index.js');
+const { City, Area, Playlist } = require('../models/index.js');
 const inside = require('point-in-polygon');
 
 exports.getCities = (req, res, next) => {
