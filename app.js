@@ -6,7 +6,8 @@ const cors = require('cors')
 const mongoose = require('mongoose')
 const jwt = require('express-jwt');
 const jwks = require('jwks-rsa');
-const { DB_URL = require('./config/databaseConfig.js').DB_URL } = process.env;
+const { DB_URL } = process.env.DB_URL ? process.env : require('./config/databaseConfig.js')
+// const { DB_URL = require('./config/databaseConfig.js').DB_URL } = process.env;
 
 const jwtCheck = jwt({
   secret: jwks.expressJwtSecret({
