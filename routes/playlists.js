@@ -16,7 +16,6 @@ playlistsRouter.route('/:playlist_id')
     db.getPlaylistById(req, res, next)
   })
   .patch((req, res, next) => {
-    console.log('anything')
     db.voteOnPlaylist(req, res, next)
   })
 
@@ -28,10 +27,5 @@ playlistsRouter.route('/:playlist_id/comments')
   .get(db.getPlaylistComments)
   .post(db.addCommentToPlaylist)
 
-// playlistsRouter.route('/:playlist_id/votes')
-// .patch((req, res, next) => {
-//   console.log('anything')
-//   db.voteOnPlaylist(req, res, next)
-// })
 
 module.exports = playlistsRouter
