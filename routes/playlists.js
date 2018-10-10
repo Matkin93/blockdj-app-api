@@ -13,8 +13,11 @@ playlistsRouter.route('/area_id')
 
 playlistsRouter.route('/:playlist_id')
   .get((req, res, next) => {
-    console.log('Anything')
     db.getPlaylistById(req, res, next)
+  })
+  .patch((req, res, next) => {
+    console.log('anything')
+    db.voteOnPlaylist(req, res, next)
   })
 
 playlistsRouter.route('/:playlist_id/tracks')
@@ -25,7 +28,10 @@ playlistsRouter.route('/:playlist_id/comments')
   .get(db.getPlaylistComments)
   .post(db.addCommentToPlaylist)
 
-playlistsRouter.route('/:playlist_id/votes')
-  .patch(db.voteOnPlaylist)
+// playlistsRouter.route('/:playlist_id/votes')
+// .patch((req, res, next) => {
+//   console.log('anything')
+//   db.voteOnPlaylist(req, res, next)
+// })
 
 module.exports = playlistsRouter

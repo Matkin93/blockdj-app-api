@@ -110,17 +110,15 @@ describe('Block DJ APP', () => {
       )
     })
     describe('/api/playlists/:playlist_id', () => {
-      it('GET: get a playlist by id', (done) => {
+      it.only('GET: get a playlist by id', (done) => {
         return request.get(`/api/playlists/${playlistDocs[0]._id}`)
           .expect(200)
           .then(res => {
-            // console.log(res.body);
-            expect(res.body).toBe(!null)
+            console.log(res.body.name);
+            expect(res.body.name).toBe('Off The Wall Redux')
             done();
           });
       });
     })
   })
-
-
 })
