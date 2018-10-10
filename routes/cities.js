@@ -4,7 +4,7 @@ const db = require('../controllers/cities.js')
 citiesRouter.route('/')
   .get(db.getCities)
 
-citiesRouter.route('/:city_id')
+citiesRouter.route('/:cityid')
   .get(db.getPlaylistsByAreaCoords)
 
 module.exports = citiesRouter
