@@ -20,6 +20,9 @@ const UserPlaylistSchema = new Schema({
       }
     ]
   },
+  playlist_url: {
+    type: String
+  },
   created_at: {
     type: Date,
     default: Date.now
