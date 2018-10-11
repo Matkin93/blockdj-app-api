@@ -29,6 +29,9 @@ const PlaylistSchema = new Schema({
     type: Date,
     default: Date.now
   },
+  playlist_url: {
+    type: String
+  },
   updated_at: {
     type: Date
   }
